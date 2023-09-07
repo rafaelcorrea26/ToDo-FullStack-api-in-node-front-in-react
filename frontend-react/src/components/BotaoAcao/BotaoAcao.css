@@ -1,0 +1,11 @@
+.botaoAcao button {
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #FFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }

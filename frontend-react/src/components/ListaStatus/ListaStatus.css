@@ -1,0 +1,13 @@
+.listaStatus select{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: #ebebeb;
+  }
+
+  .listaStatus select:hover {
+    background-color: #DDD;
+  }

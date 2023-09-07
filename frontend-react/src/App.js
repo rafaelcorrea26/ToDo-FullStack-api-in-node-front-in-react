@@ -1,5 +1,4 @@
 import Formulario from './components/Formulario';
-import Titulo from './components/Titulo';
 
 
 function App() {
