@@ -1,0 +1,25 @@
+/*th = titulos,  td = o que tem dentro da coluna*/
+.listaTarefas td {
+    min-width: 50px;
+    padding: 10px 15px;
+    border: 1px solid #DDD;
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .listaTarefas td { 
+    color: #333;
+    font-weight: 600;
+    align-items: center;
+  } 
+
+  .listaTarefas .botoes{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .listaTarefas .botoes:nth-child(1){
+    margin-right: 5px;
+  }

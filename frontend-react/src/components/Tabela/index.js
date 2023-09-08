@@ -1,8 +1,21 @@
 import './Tabela.css';
-import ListaStatus from '../ListaStatus';
-import BotaoAcao from '../BotaoAcao';
+import ListaTarefas from '../ListaTarefas';
+import Loading from '../Loading';
+import { useContext, useEffect } from 'react';
+import fetchTasks from '../../api/fetchTasks';
+import AppContext from '../../context/AppContext';
 
 function Tabela() {
+    const { tasks, setTasks, loading, setLoading } = useContext(AppContext);
+
+    useEffect(() => {
+        fetchTasks().then((response) => {
+            setTasks(response);
+            setLoading(false);
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <div className="tabela">
             <table>
@@ -14,29 +27,7 @@ function Tabela() {
                         <th>Ações</th>
                     </tr>
                 </thead>
-
-                <tbody>
-                    <td>título da task</td>
-                    <td>00 de janeiro de 2023 15:00</td>
-                    <td >
-                        <ListaStatus />
-                    </td>
-                    <td >
-                        <div className='botoes'>
-                        <BotaoAcao
-                            label="Editar"
-                            cor='#FFA500'
-                        />
-                        <BotaoAcao
-                            label="Deletar"
-                            cor='#FF0000'
-                        />
-
-                        </div>
-                    </td>
-                </tbody>
-
-
+                {tasks?.map((task) => <ListaTarefas key={task.id} data={task} />)}
             </table>
         </div>
     );

@@ -7,7 +7,8 @@ div.tabela {
     width: 100%;
 }
 
-.tabela td, th {
+/*th = titulos,  td = o que tem dentro da coluna*/
+.tabela th {
     min-width: 50px;
     padding: 10px 15px;
     border: 1px solid #DDD;
@@ -15,20 +16,4 @@ div.tabela {
     max-width: 20px;
   }
   
-  /*th = titulos,  td = o que tem dentro da coluna*/
-  .tabela td { 
-    color: #333;
-    font-weight: 600;
-    align-items: center;
-  } 
 
-  .tabela .botoes{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-
-  .tabela .botoes:nth-child(1){
-    margin-right: 5px;
-  }
