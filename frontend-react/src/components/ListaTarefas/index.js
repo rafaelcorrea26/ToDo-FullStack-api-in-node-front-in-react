@@ -10,22 +10,17 @@ import updateStatusTask from '../../api/updateStatusTask';
 
 function ListaTarefas({ data }) {  
     console.log(data);
-
     const { id, title, created_at, status} = data;
-
     const [novoStatus, setnovoStatus] = useState(status);
 
-    console.log(novoStatus);
-
-
-    const handleChange = async (status) => {
-        
+    const handleChange = async (status) => {        
         const task = {
-            status: status
+            id,
+            status
         }
 
         console.log(task);
-       // await updateStatusTask(task);
+        await updateStatusTask(task);
       };
 
     const onClickAlterar = async () => {

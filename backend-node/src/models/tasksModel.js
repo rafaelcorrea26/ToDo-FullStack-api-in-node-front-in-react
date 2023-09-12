@@ -21,12 +21,19 @@ const deleteTask = async (id) => {
 };
 
 const updateTask = async (id, task) => {
+  let query = '';
   const { title, status } = task;
   
-  const query = 'UPDATE tasks SET title = ?, status = ? WHERE id = ?';
-
-  const [updatedTask] = await connection.execute(query, [title, status, id]);
-  return updatedTask;
+  if (title != null){
+     query = 'UPDATE tasks SET title = ?, status = ? WHERE id = ?';
+     const [updatedTask] = await connection.execute(query, [title, status, id]);
+     return updatedTask;
+  } else
+  {
+     query = 'UPDATE tasks SET status = ? WHERE id = ?';
+     const [updatedTask] = await connection.execute(query, [status, id]);
+     return updatedTask;
+  }
 };
 
 module.exports = {
