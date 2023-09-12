@@ -5,13 +5,28 @@ import updateTask from '../../api/updateTask';
 import deleteTask from '../../api/deleteTask';
 import fetchTasks from '../../api/fetchTasks';
 import React, {useState } from "react";
+import updateStatusTask from '../../api/updateStatusTask';
 
 
 function ListaTarefas({ data }) {  
     console.log(data);
+
     const { id, title, created_at, status} = data;
+
     const [novoStatus, setnovoStatus] = useState(status);
+
     console.log(novoStatus);
+
+
+    const handleChange = async (status) => {
+        
+        const task = {
+            status: status
+        }
+
+        console.log(task);
+       // await updateStatusTask(task);
+      };
 
     const onClickAlterar = async () => {
         const task = {
@@ -24,6 +39,7 @@ function ListaTarefas({ data }) {
         console.log(task);
         await updateTask(task);
     }
+
 
     const onClickExcluir = async () => {
         await deleteTask(id);
@@ -38,7 +54,7 @@ function ListaTarefas({ data }) {
                     <td >
                         <ListaStatus 
                             valor={novoStatus}
-                            aoAlterado={valor => setnovoStatus(valor)}/>
+                            onChange= {handleChange}/>
                     </td>
                     <td >
                         <div className='botoes'>

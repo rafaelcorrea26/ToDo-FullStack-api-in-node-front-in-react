@@ -8,6 +8,5 @@ const updateStatusTask = async (task) => {
         body: JSON.stringify(task),
       });
   
-      console.log()
     }
     export default updateStatusTask;

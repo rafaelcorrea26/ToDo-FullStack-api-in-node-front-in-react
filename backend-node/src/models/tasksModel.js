@@ -29,19 +29,9 @@ const updateTask = async (id, task) => {
   return updatedTask;
 };
 
-const updateStatusTask = async (id, task) => {
-  const {status } = task;
-  
-  const query = 'UPDATE tasks SET status = ? WHERE id = ?';
-
-  const [updateStatusTask] = await connection.execute(query, [status, id]);
-  return updateStatusTask;
-};
-
 module.exports = {
   getAll,
   createTask,
   deleteTask,
   updateTask,
-  updateStatusTask,
 };
