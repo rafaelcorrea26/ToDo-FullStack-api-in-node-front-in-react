@@ -14,4 +14,7 @@ router.put('/tasks/:id',
   tasksController.updateTask,
 );
 
+router.put('/tasks/:id',tasksController.updateStatusTask);
+
+
 module.exports = router;

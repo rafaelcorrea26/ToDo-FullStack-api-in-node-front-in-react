@@ -4,7 +4,7 @@ import './CampoTexto.css';
 const CampoTexto = (props) => {
     const placeholderModificada = `Digite sua ${props.label}`;
     const aoDigitado = (evento) => {
-        props.aoAlterado(evento.target.value)
+        props.aoAlterado(evento.target.value);
     }  
     
     return (
